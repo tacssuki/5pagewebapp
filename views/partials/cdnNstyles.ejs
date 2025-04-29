@@ -1,0 +1,38 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+    extend: {
+      fontFamily: {
+        'inria-sans': ['"Inria Sans"', 'sans-serif'],
+        'Josefin-Sans': ['"Josefin Sans"', 'sans-serif'],
+        'Instrument-Sans': ['"Instrument Sans"', 'sans-serif' ]
+      },
+      keyframes: {
+        slideup: {
+          '0%': { transform: 'translateY(100%)',opacity:'0'},
+          '100%': { transform: '~(0)' },
+        },
+        slidedown:{
+          '0%':{ transform: 'translateY(-100%)', opacity:'0'},
+          '100%': { transform: 'translateY(0)' },
+        },
+        fadein:{
+          '0%': {opacity:'0'},
+          '100%' : {opacity: '1'},
+        }
+
+      },
+      animation: {
+        slideup: 'slideup 1s ease-in-out',
+        slidedown: 'slidedown 1s ease-in-out',
+        fadein : 'fadein 1s ease-in',
+      }
+    },
+  },
+    };
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">

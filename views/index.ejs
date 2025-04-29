@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - SIA101 by Mendeja & Taculad</title>
+    <%- include('partials/cdnNstyles.ejs') %>
+</head>
+
+<body class="w-screen h-screen bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 flex flex-col justify-center items-center font-inria-sans text-white uppercase overflow-hidden">
+    <div class="w-3/4 uppercase py-5 animate-slidedown">
+        <p class="m-0 text-4xl">System</p>
+        <p class="text-8xl m-0">INTEGRATION&nbsp;AND&nbsp;ARCHITECTURE</p>
+        <p class="text-right text-3xl">BSIT 3D</p>
+    </div>
+
+    <div class="flex h-3/5 w-4/5 gap-5 justify-center">
+
+        <div class="flex flex-col bg-gray-400 justify-between items-center bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 rounded-xl overflow-hidden pt-10 animate-slideup w-full max-w-xs flex-grow">
+            <span class="material-icons" style="font-size:128px;">attach_money</span>
+            <div class="text-center text-xl w-[80%] pb-10">
+                <p class="m-0">An intuitive web app for quick and accurate currency conversions with real-time exchange rates.</p>
+            </div>
+            <div class="w-4/5 text-center h-auto border-t-2 py-4">
+                <a href="/currencyconverter" class="text-white text-xl">Currency Converter</a>
+            </div>
+        </div>
+
+        <div class="flex flex-col bg-gray-400 items-center bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 rounded-xl justify-between overflow-hidden pt-10 animate-slidedown w-full max-w-xs flex-grow">
+            <span class="material-icons" style="font-size:128px;">calculate</span>
+            <div class="text-center text-xl w-[80%] pb-10">
+                <p class="m-0">Basic calculator handles simple arithmetic: addition, subtraction, multiplication, division, and average.</p>
+            </div>
+            <div class="w-4/5 text-center h-auto border-t-2 py-4">
+                <a href="/calculator" class="text-white text-xl">Basic Calculator</a>
+            </div>
+        </div>
+
+        <div class="flex flex-col bg-gray-400 items-center bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 rounded-xl justify-between overflow-hidden pt-10 animate-slideup w-full max-w-xs flex-grow">
+            <span class="material-icons" style="font-size:128px;">cloud</span>
+            <div class="text-center text-xl w-[80%] pb-10">
+                <p class="m-0">Get real-time weather updates for different locations.</p>
+            </div>
+            <div class="w-4/5 text-center h-auto border-t-2 py-4">
+                <a href="/weather" class="text-white text-center text-xl">Weather Checker</a>
+            </div>
+        </div>
+
+        <div class="flex flex-col bg-gray-400 items-center bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 rounded-xl justify-between overflow-hidden pt-10 animate-slidedown w-full max-w-xs flex-grow">
+            <span class="material-icons" style="font-size:128px;">person</span>
+            <div class="text-center text-xl w-[80%] pb-10">
+                <p class="m-0">Meet the developers of this Web Application, Mendeja (front-end) and Taculad (back-end), crafting seamless web applications.                </p>
+            </div>
+            <div class="w-4/5 text-center h-auto border-t-2 py-4">
+                <a href="/profiles" class="text-white text-xl">Developer Profile</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="w-screen font-inria-sans text-center text-white absolute bottom-0">
+        <p class="mb-2">&copy; <span id="year"></span> All rights reserved.&nbsp; JOHN RAYVIE MENDEJA&nbsp; | &nbsp;JUSHTINE KYLLE TACULAD</p>
+    </footer>
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('year').textContent = currentYear;
+    </script>
+        
+</body>
+
+</html>

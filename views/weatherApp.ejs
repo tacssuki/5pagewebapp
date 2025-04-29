@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <%- include('partials/cdnNstyles.ejs') %>
+</head>
+
+<body class="w-screen h-screen flex flex-col items-center justify-center gap-3 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 overflow-hidden font-inria-sans text-white">
+
+<h1 class="text-4xl  animate-slidedown">Weather App</h1>
+<form class="flex w-3/5 justify-center align-middle animate-slideup">
+<div class="flex w-full justify-center align-middle">
+    <input
+        class="w-3/4 bg-gray-400 rounded-full bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 px-10 shadow-md py-4 outline-none text-lg placeholder:text-white"
+        type="text" 
+        name="city" 
+        id="cityInput" 
+        placeholder="Enter location" 
+        required
+    />
+</div>
+</form>
+
+<div class="w-3/5 mt-5" id="weatherResult">
+    <% if (weather) { %>
+        <div class="w-full flex justify-center">
+
+            <div class="w-3/4">
+                <% if (weather.icon) { %>
+                    <img
+                        class="w-full"
+                        src="http://openweathermap.org/img/wn/<%= weather.icon %>@4x.png"
+                        alt="<%= weather.description %>"
+                    />
+                <% } %>
+            </div>
+
+            <div class="w-full flex flex-col align-middle justify-center uppercase">
+                <p class="text-5xl m-0"><%= weather.location %>, <%= weather.country %></p>
+                <p class="text-9xl m-0"><%= Math.round(weather.temperature) %>°</p>
+            </div>
+        </div>
+
+        <div class="flex justify-center uppercase text-xl">
+            <div class="flex flex-col gap-2 py-3 text-right pr-10 border-solid border-r border-white">
+                <p>Description</p>
+                <p>Wind Speed</p>
+                <p>Humidity</p>
+                <p>Max Temp</p>
+                <p>Country</p>
+                <p>Timezone</p>
+            </div>
+            <div class="flex flex-col gap-2 pl-10 py-3 border-solid border-l border-white">
+                <p><%= weather.description %></p>
+                <p><%= weather.windspeed %></p>
+                <p><%= weather.humidity %></p>
+                <p><%= weather.maxtemp %></p>
+                <p><%= weather.country %></p>
+                <p><%= weather.timezone %></p>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+<% if (error) { %>
+    <div class="alert alert-danger mt-3 text-red-600">
+        <p><%= error %></p>
+    </div>
+<% } %>
+<%- include('partials/closeBtn.ejs') %>
+<script defer src="/js/scripts.js"></script>
+
+</body>
+</html>
